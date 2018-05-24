@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cloud-gateway-demo
+
+server:
+  port: 7300
+
+eureka:
+  client:
+    service-url:
+      defaultZone:
+          http://young:123456@localhost:7000/eureka/
+
+zuul:
+  routes:
+    cloud-api-demo: /api/**
+    cloud-service-demo: /service/**
