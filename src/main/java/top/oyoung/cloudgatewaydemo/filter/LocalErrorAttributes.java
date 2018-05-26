@@ -1,8 +1,8 @@
 package top.oyoung.cloudgatewaydemo.filter;
 
-import org.springframework.boot.web.reactive.error.DefaultErrorAttributes;
+import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
 import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.server.ServerRequest;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.Map;
 
@@ -10,7 +10,7 @@ import java.util.Map;
 public class LocalErrorAttributes extends DefaultErrorAttributes {
 
     @Override
-    public Map<String, Object> getErrorAttributes(ServerRequest request, boolean includeStackTrace) {
-        return super.getErrorAttributes(request, includeStackTrace);
+    public Map<String, Object> getErrorAttributes(WebRequest webRequest, boolean includeStackTrace) {
+        return super.getErrorAttributes(webRequest, includeStackTrace);
     }
 }
