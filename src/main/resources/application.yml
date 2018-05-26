@@ -15,3 +15,17 @@ zuul:
   routes:
     cloud-api-demo: /api/**
     cloud-service-demo: /service/**
+  retryable: true
+#ribbon
+#全局配置
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 1500
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
